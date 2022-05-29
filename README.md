@@ -88,6 +88,8 @@ MovieNight: Movie Recommendation System:
 * Login signup page(using Firebase)
 * Notes Section (Saves notes in the local storage)
 * Portfolio Section where You can contact me 
+* Responsive Website
+* Clicking on recommended movie takes us to its imdb page where we can watch trailer, ratings and review it.
 
 ### Algorithm
 ***
