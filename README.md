@@ -90,6 +90,7 @@ MovieNight: Movie Recommendation System:
 * Portfolio Section where You can contact me 
 * Responsive Website
 * Clicking on recommended movie takes us to its imdb page where we can watch trailer, ratings and review it.
+* Dark and Light Theme Change in Recommender page
 
 ### Algorithm
 ***
