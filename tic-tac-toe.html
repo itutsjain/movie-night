@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Tic-Tac-Toe" />
+		<meta name="keywords" content="one, two, three" />
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet"><title>Welcome to Movie Night</title>
+		<link rel="shortcut icon" href="./signin/register.png" type="image/x-icon">
+		<!-- <h3>RESET</h3> -->
+		<!-- external CSS link -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet" />
+		
+	</head>
+	<style>
+		/* Box Model Hack */
+		*{
+		  box-sizing: border-box;
+		}
+		
+		/******************************************
+		/* LAYOUT
+		/*******************************************/
+		html {
+		  height: 100vh;
+		  color: white;
+		  text-shadow: 2px 2px 2px black;
+		  position: relative;
+		  font-family: 'Exo 2', sans-serif;
+		}
+		
+		body{
+			overflow: hidden;
+		}
+		
+		h1 {
+		
+		  margin: 0;
+		  font-weight: bolder;
+		}
+		
+		h3 {
+		  font-size: 2rem;
+		  margin: 1rem 0 1.5rem 0;
+		}
+		
+		img{
+		  display: block;
+		  margin: 0 auto;
+		  width: 25%;
+		}
+		
+		main {
+		  height: 100vh;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  background-image: url(imagess/R.png);
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  /* height: 100%; */
+		}
+		
+		.gamearea {
+		  display: flex;
+		  gap: 10px;
+		  align-items: center;
+		  background-color: white;
+		  background: rgba( 255, 255, 255, 0.25 );
+		  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+		  backdrop-filter: blur( 2px );
+		  -webkit-backdrop-filter: blur( 2px );
+		  border-radius: 10px;
+		  border: 1px solid rgba( 255, 255, 255, 0.18 );
+		  padding: 30px;
+		  border-radius: 20px;
+		}
+		
+		button {
+		  border: none;
+		  height: 150px;
+		  width: 150px;
+		  background-color: rgba(255, 255, 255, 0.7);
+		  border-radius: 10px;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  font-size: 6rem; 
+		  color: rgb(87, 119, 140); 
+		  font-family: 'Roboto', sans-serif; 
+		  padding-bottom: 20px;
+		}
+		
+		button:hover {
+		  background-color: rgba(255, 255, 255, 0.8);
+		  cursor: pointer;
+		}
+		
+		button:disabled {
+		  cursor: not-allowed;
+		  background-color: rgba(255, 255, 255, 0.7); 
+		}
+		
+		.row {
+		  display: flex;
+		  flex-direction: column;
+		  gap: 10px;
+		}
+		
+		h2 {
+		  position: absolute;
+		  top: 46%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  font-size: 6rem;
+		  z-index: 9;
+		  padding: 30px;
+		  border: solid 2px white;
+		  border-radius: 20px;
+		  background-color: rgba(0,0,0, 0.8);
+		  text-align: center;
+		  animation: slide-to-top 0.5s both; 
+		}
+		
+		
+		h2.hidden {
+		  display: none;
+		}
+		
+		/******************************************
+		/* ADDITIONAL STYLES
+		/*******************************************/
+		
+		footer{
+		  margin-top: 2rem;
+		  display: flex;
+		
+		}
+		footer p{
+		  display: flex;
+			align-items: center;
+			justify-content: center;
+		  flex-wrap: wrap;
+		  gap: 20px;
+		  margin-top: 30px;
+		}
+		
+		footer a{
+		  text-decoration: none;
+		  color: rgb(255, 255, 255);
+		  font-size: 1.7em;
+		  text-shadow: 1rem;
+		  border-right: 3px solid white;
+		  padding-right: 25px;
+		  padding-left: 6px;
+		
+		}
+		footer a:hover{
+			color: black;
+		}
+		
+		footer a:last-child {
+		  border-right: none;
+		}
+		
+		@keyframes slide-to-top {
+		  0% {
+			transform: translate(-50%, 200px);
+			opacity: 0;
+		  }
+		  100% {
+			transform: translate(-50%, -50%);
+			opacity: 1;
+		  }
+		}
+html, body, div, span, applet, object, iframe,
+ h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+		</style>
+	<body>
+		<h2 class="hidden">PLAYER X WON!</h2>
+
+		<main>
+			<h1>Tic Tac Toe</h1>
+			<h3>X's turn</h3>
+			<section class="gamearea">
+				<section class="row">
+					<button id="box0" value="0"></button>
+					<button id="box3" value="3"></button>
+					<button id="box6" value="6"></button>
+				</section>
+				<section class="row">
+					<button id="box1" value="1"></button>
+					<button id="box4" value="4"></button>
+					<button id="box7" value="7"></button>
+				</section>
+				<section class="row">
+					<button id="box2" value="2"></button>
+					<button id="box5" value="5"></button>
+					<button id="box8" value="8"></button>
+				</section>
+			</section>
+			<footer>
+				<p>
+					<a href="home.html">Home</a>
+					<a href="https://itutsjain.github.io/portfolio.github.io/">Portfolio</a>
+				</p>
+			</footer>
+		</main>
+		<script>class TicTacToe {
+			constructor() {
+			  this.firstPlayer = this.firstPlayer()
+			  this.currentPlayer = this.firstPlayer
+			  this.gameBoard = [
+				[null, null, null],
+				[null, null, null],
+				[null, null, null]
+			  ];
+			  this.turn = 0
+			}
+			startGame() {
+			  //listen for clicks on boxes
+			  this.addEventListeners()
+			}
+			addEventListeners() {
+			  const keys = document.querySelector('.gamearea');
+			  keys.addEventListener('click', event => {
+				const { target } = event;
+				const { value } = target;
+				//if box hasn't already been clicked
+				if (target.matches('button')) {
+				  //add character to array
+				  this.addCharacter(value);
+				  //check to see if character won/draw
+				  this.didSomeoneWin()
+				}
+			  });
+			}
+			firstPlayer() {
+			  let firstPlayer = 'o'
+			  if (Math.random() * 2 > 1) {
+				firstPlayer = 'x'
+			  }
+			  document.querySelector('h3').innerText = `${firstPlayer.toUpperCase()}'s turn`
+			  return firstPlayer
+			}
+			nextTurn() {
+			  //increment turn counter
+			  this.turn++
+			  this.changeCurrentPlayer()
+			}
+			changeCurrentPlayer() {
+			  // change current character
+			  if (this.currentPlayer == 'x') {
+				this.currentPlayer = 'o'
+			  } else if (this.currentPlayer == 'o') {
+				this.currentPlayer = 'x'
+			  }
+			  document.querySelector('h3').innerText = `${this.currentPlayer.toUpperCase()}'s turn`
+			}
+			addCharacter(value) {
+			  const quotient = Math.floor(value / 3)
+			  const remainder = value % 3
+			  const boxId = `box${value}`
+			  this.gameBoard[quotient][remainder] = this.currentPlayer
+			  document.getElementById(boxId).innerHTML = this.currentPlayer
+			  document.getElementById(boxId).setAttribute('disabled', '')
+			}
+			didSomeoneWin() {
+			  // horizontal win check
+			  for (let y = 0; y < this.gameBoard.length; y++) {
+				const row = this.gameBoard[y];
+				if (row[0] == this.currentPlayer && row[1] == this.currentPlayer && row[2] == this.currentPlayer) {
+				  return this.someoneWon();
+				}
+			  };
+			  //vertical win check
+			  for (let x = 0; x < this.gameBoard.length; x++) {
+				if (this.gameBoard[0][x] == this.currentPlayer && this.gameBoard[1][x] == this.currentPlayer && this.gameBoard[2][x] == this.currentPlayer) {
+				  return this.someoneWon();
+				}
+			  };
+			  //diagonal win check
+			  if (this.gameBoard[0][0] === this.currentPlayer && this.gameBoard[1][1] === this.currentPlayer && this.gameBoard[2][2] === this.currentPlayer) {
+				return this.someoneWon();
+			  }
+			  if (this.gameBoard[2][0] == this.currentPlayer && this.gameBoard[1][1] == this.currentPlayer && this.gameBoard[0][2] == this.currentPlayer) {
+				return this.someoneWon();
+			  }
+			  //if all boxes are filled, it's a draw
+			  if (this.turn == 8) {
+				document.querySelector('h2').innerText = `IT'S A TIE!`
+				return this.gameOver()
+			  }
+			  //change character 
+			  this.nextTurn()
+			};
+			someoneWon() {
+			  document.querySelector('h2').innerText = `PLAYER ${this.currentPlayer.toUpperCase()} WON!`;
+			  this.gameOver()
+		  
+			  //disable all boxes
+			  for (let i = 0; i < 9; i++) {
+				document.getElementById(`box${i}`).setAttribute('disabled', '')
+			  }
+			}
+			gameOver() {
+			  document.querySelector('main').style.filter = 'blur(5px)';
+			  document.querySelector('h2').classList.toggle('hidden');
+			}
+		  }
+		  
+		  const ticTacToe = new TicTacToe
+		  ticTacToe.startGame()
+		  
+		  
+		  
+		  
+		  
+		  </script></body>
+</html>
