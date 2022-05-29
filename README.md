@@ -21,6 +21,8 @@ Project Link: https://itutsjain.github.io/movie-night/#
 
 Demo Video: https://youtu.be/Np_X0SzJkus
 
+Documentation: https://www.canva.com/design/DAFCF1ozNC4/whTpmer09LMKYLTffvgFeA/view?utm_content=DAFCF1ozNC4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
 ### Screenshots
 * Home Page
 
@@ -76,7 +78,6 @@ MovieNight: Movie Recommendation System:
 
 ### algo
 ***
-Algorithm Used and Its Benefits
 ```
 A content based recommender works with data that the user provides, either explicitly (rating) or implicitly (clicking on a link). Based on that data, a user profile is generated, which is then used to make suggestions to the user. As the user provides more inputs or takes actions on the recommendations, the engine becomes more and more accurate. The concepts of Term Frequency (TF) and Inverse Document Frequency (IDF) are used in information retrieval and also content based filtering mechanisms (such as a content based recommender). They are used to determine the relative importance of a document / article / news item / movie etc.
 ```
@@ -86,7 +87,9 @@ Benefits:
 * Recommendations are transparent to the user.
 * You avoid the “cold start” problem. 
 
-###benefits
+
+
+### benefits
 
 *** Benefits Of A Recommendation System
 ```
