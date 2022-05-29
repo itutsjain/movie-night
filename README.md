@@ -26,15 +26,18 @@ Documentation: https://www.canva.com/design/DAFCF1ozNC4/whTpmer09LMKYLTffvgFeA/v
 ### Screenshots
 * Home Page
 
-![ss1](https://user-images.githubusercontent.com/59473485/125424577-ebf7dc8f-e561-42e9-b051-a1e466be3619.png)
+![homepage](https://github.com/itutsjain/movie-night/blob/main/screenshots/homepage.jpg?raw=true)
 
 * Sign Up
 
-![ss5](https://user-images.githubusercontent.com/59473485/125425454-3f1133a5-a525-4b44-bbb2-e97ef2eb033b.png) 
+![signin](https://github.com/itutsjain/movie-night/blob/main/screenshots/signin.jpg?raw=true) 
 
 * Team's Meeting
 
 ![2021-07-13 (18)](https://user-images.githubusercontent.com/59473485/125504468-2c50d3b7-a0c2-4529-8571-2eb17f5dedc6.png)
+
+* Movies Notes
+![notes](https://github.com/itutsjain/movie-night/blob/main/screenshots/notes.jpg?raw=true)
 
 * Chat System
 
