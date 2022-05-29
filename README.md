@@ -8,12 +8,18 @@
 7. [Benefits of a recommender System](#Benefits)
 ### General Info
 ***
-This web app is an online portal that enables users to get the movie recommendation based on their choice, get the updates about popular movies and play games.  It has a notes section where user can right his thoughts about the movie or his latest game strategy.  Agile Methodology was used for building this project. The best Agile practices adopted were :
+This web app is an online portal that enables users to get the movie recommendation based on their choice, get the updates about popular movies and play games.  It has a notes section where user can right his thoughts about the movie or his latest game strategy.  Continous test driven development approach was used for building this project. The best CI/CD practices adopted were :
 
 * Proper Planning
 * Keeping Product Backlog
 * Maintaining a Sprint Burndown and a Product Burndown.
 * Adopting the concepts of relative estimation and velocity.
+* Writing a test first 
+* Avoid functional complexity
+* Focusing on what you need to achieve
+* Maintaining code austerity
+* Testing repeatedly
+* Maintaining code sanctity
 
 ## Live Demo 
 ***
